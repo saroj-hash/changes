@@ -1,0 +1,197 @@
+import React from "react"
+import "bootstrap/dist/css/bootstrap.min.css"
+import Container from "react-bootstrap/TabContainer"
+import Photo1 from "../assets/photo1.jpg"
+import Photo2 from "../assets/photo2.jpg"
+import Photo3 from "../assets/photo3.jpg"
+import Photo4 from "../assets/photo4.jpg"
+import Photo5 from "../assets/photo5.jpg"
+import Photo6 from "../assets/photo6.jpg"
+import Photo7 from "../assets/photo7.jpg"
+import Photo8 from "../assets/photo8.jpg"
+import Photo9 from "../assets/photo9.jpg"
+import Photo10 from "../assets/photo10.jpg"
+import Photo11 from "../assets/photo11.jpg"
+import Photo12 from "../assets/photo12.jpg"
+import Photo13 from "../assets/photo13.jpg"
+import Photo14 from "../assets/photo14.jpg"
+import Photo15 from "../assets/photo15.jpg"
+import Photo16 from "../assets/photo16.jpg"
+import Photo17 from "../assets/photo17.jpg"
+import Photo18 from "../assets/photo18.jpg"
+import Photo19 from "../assets/photo19.jpg"
+import Photo20 from "../assets/photo20.jpg"
+import Photo21 from "../assets/photo21.jpg"
+import Photo22 from "../assets/photo22.jpg"
+import Photo23 from "../assets/photo23.jpg"
+import Photo24 from "../assets/photo24.jpg"
+import Photo25 from "../assets/photo25.jpg"
+import Photo26 from "../assets/photo26.jpg"
+import Photo27 from "../assets/photo27.jpg"
+import Photo28 from "../assets/photo28.jpg"
+import Photo29 from "../assets/photo29.jpg"
+import Photo30 from "../assets/photo30.jpg"
+import Photo31 from "../assets/photo31.jpg"
+import Photo32 from "../assets/photo32.jpg"
+import Photo33 from "../assets/photo33.jpg"
+import Photo34 from "../assets/photo34.jpg"
+import Photo37 from "../assets/photo37.jpg"
+import Photo41 from "../assets/photo41.jpg"
+import Photo44 from "../assets/photo44.jpg"
+import Photo45 from "../assets/photo45.jpg"
+import Photo46 from "../assets/photo46.jpg"
+import Photo47 from "../assets/photo47.jpg"
+import Photo48 from "../assets/photo48.jpg"
+import Photo49 from "../assets/photo49.jpg"
+import Photo50 from "../assets/photo50.jpg"
+import Photo51 from "../assets/photo51.jpg"
+import Photo52 from "../assets/photo52.jpg"
+import Photo53 from "../assets/photo53.jpg"
+import Photo54 from "../assets/photo54.jpg"
+
+
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import ArrowDropDownRoundedIcon from '@material-ui/icons/ArrowDropDownRounded';
+import Badge from 'react-bootstrap/Badge'
+import Blogs from "./blogs"
+export default class Comp1 extends React.Component {
+    state = {
+        blogs:false,
+        index: 0,
+        quotes: [
+            {
+                quote: '"The beautiful thing about fear is when you run to it, it runs away."',
+                by: "Robin Sharma",
+                url: "url("+ Photo41 +")"
+            },
+            {
+                quote: '"The only thing that makes a dream impossible to achieve:the fear of failure."',
+                by:    "Paulo Coelho",
+                url: "url("+ Photo44 +")"
+            },
+            {
+                quote: '"Nothing in this world is ever completely wrong. Even a stopped clock is right twice a day."',
+                by: "Paulo Coelho",
+                url: "url("+ Photo45 +")"
+            },
+            {
+                quote: '"Be brave. Take risks. Nothing can substitute experience"',
+                by: "Paulo Coelho",
+                url: "url("+ Photo37 +")"
+            },
+               {
+                   quote: ' "It took me 17 years and 114days to become an overnight success" ',
+                   by: "Lionel Messi",
+                   url: "url("+  Photo46 +")"
+               },
+            {
+                quote: '"We are all gonna die. Just the question is how." ',
+                by: "Point Break",
+                url: "url("+ Photo47 +")" 
+            },
+             {
+                quote: ' "Many of life failures are people who did not realize how close they were to success when they gave up."  ',
+                by: "Thomas Edition",
+                url: "url("+ Photo48 +")"
+            },
+            {
+               quote: '  "If you are not prepared to be wrong, you will never come up with anything original."  ',
+               by: "Ken Robinson" ,
+                url: "url("+ Photo49 +")"
+            },
+            {
+                url: "url("+ Photo50 + ")"
+            },
+            {
+                url: "url("+ Photo51 +  ")"
+            },
+            {
+                url: "url("+ Photo52 +  ")"
+            },
+            {
+                url: "url("+ Photo53+  ")"
+            },
+             {
+                url: "url("+ Photo54+  ")"
+            },
+            
+            
+        ],
+    }
+    generateRandomIndex = () => {
+        let value = Math.floor(
+            Math.random() * ((this.state.quotes.length - 1) - 0 + 1) + 0
+        )
+        this.setState({
+            index: value
+        })
+    }
+    componentWillMount = () => {
+        this.generateRandomIndex()
+    }
+
+
+    render() {
+        if(this.state.blogs) return <Blogs/>
+        return <body style={{width:"100%", height:"100%" }}>
+                <div className="container-fluid" style={{backgroundImage:this.state.quotes[this.state.index].url , height:"100%",width:"100%", backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover"}}>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <Typography variant="h4" component="h4" style={{fontStyle:"italic", fontFamily:"Monaco"}} className="text-light text-center">
+                        {this.state.quotes[this.state.index].quote}
+                    </Typography>
+                    <br/><br/>
+                    <Typography variant="h4" component="h4" style={{fontStyle:"italic", fontFamily:"Monaco"}} className="text-light text-center">
+                        -{this.state.quotes[this.state.index].by}
+                    </Typography>
+                    <br/><br/><br/><br/>
+                    <IconButton aria-label="down" className="float-right" onClick={()=>{this.setState({blogs:true})}}>
+                        <Badge pill variant="danger">
+                            <ArrowDropDownRoundedIcon/>
+                        </Badge>
+                    </IconButton>
+                    <br/><br/><br/>
+                </div>
+        </body>
+    }
+
+}
+
+// commented
+{/* <div className="row">
+<Card style={this.state.root}>
+    <CardActionArea>
+        <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+                This shall too pass
+        </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+                Yes! This shall too pass. So what, if you cry your eyes out, this shall too pass. So what, if things will never be the same, this shall too pass. So what, if you get crippling depression,...
+        </Typography>
+        </CardContent>
+    </CardActionArea>
+    <CardActions>
+        <Button size="small" color="primary" onClick={() => this.setState({ continueblog1: true })}>
+            Continue Reading...
+    </Button>
+    </CardActions>
+</Card>
+<Card style={this.state.root}>
+    <CardActionArea>
+        <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+                Autumn
+        </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+                Oh Autumn, dear Autumn! Why do we have to go through this again and again? Why do you have to shed those yellow leaves, making nature look deranged? Why can't we just skip through the dark ...
+        </Typography>
+        </CardContent>
+    </CardActionArea>
+    <CardActions>
+        <Button size="small" color="primary" onClick={() => this.setState({ continueblog2: true })}>
+            Continue Reading...
+    </Button>
+    </CardActions>
+</Card>
+</div> */}
